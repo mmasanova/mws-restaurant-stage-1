@@ -108,7 +108,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-    color: #0275d8;
+    color: #01719e;
     text-decoration: none;
 }
 
@@ -250,7 +250,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 
 #restaurant-name {
-  color: #f18200;
+  color: #b15400;
   font-family: Arial,sans-serif;
   font-size: 20pt;
   font-weight: 200;
@@ -297,7 +297,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 
 #reviews-container h2 {
-  color: #f58500;
+  color: #b15400;
   font-size: 24pt;
   font-weight: 300;
   letter-spacing: -1px;
@@ -345,7 +345,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #reviews-list .rating {
   margin: 01em 1em;
   padding: 3px 15px;
-  background: #ffa500;
+  background: #a06800;
   text-transform: uppercase;
   color: #fff;
   display: inline-block;
