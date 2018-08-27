@@ -149,8 +149,20 @@ class DBHelper {
   /**
    * Restaurant image URL.
    */
-  static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+  static imageUrlForRestaurant(restaurant, suffix) {
+    return this.addSuffixToImageSrc(`/img/${restaurant.photograph}`, suffix);
+  }
+
+  static addSuffixToImageSrc(src, suffix) {
+    if (suffix === undefined) suffix = '';
+
+    let srcSplit = src.split('.');
+    const lastIndex = srcSplit.length - 1;
+    const extension = srcSplit[lastIndex];
+
+    srcSplit.splice(lastIndex, 1);
+
+    return srcSplit.join('.') + suffix + '.' + extension;
   }
 
   /**

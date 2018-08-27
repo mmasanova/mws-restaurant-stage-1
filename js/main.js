@@ -162,10 +162,23 @@ createRestaurantHTML = (restaurant) => {
   name.innerHTML = restaurant.name;
   li.append(name);
 
+  const picture = document.createElement('picture');
+  const sourceSmall = document.createElement('source');
+  sourceSmall.media = '(max-width: 520px)';
+  sourceSmall.srcset = `${DBHelper.imageUrlForRestaurant(restaurant, '-small')} 1x, 
+    ${DBHelper.imageUrlForRestaurant(restaurant, '-small_2x')} 2x`;
+
+  picture.append(sourceSmall);
+
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  li.append(image);
+  image.src = DBHelper.imageUrlForRestaurant(restaurant, '-medium_2x')
+  image.srcset = `${DBHelper.imageUrlForRestaurant(restaurant, '-medium')} 1x, 
+    ${DBHelper.imageUrlForRestaurant(restaurant, '-medium_2x')} 2x`;
+  image.alt = restaurant.altText;
+
+  picture.append(image);
+  li.append(picture);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;

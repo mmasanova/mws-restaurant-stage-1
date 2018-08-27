@@ -8,6 +8,12 @@
 	.filter-options select {
 		margin: 1em 0 0 1em;
 	}
+
+	#restaurant-img {
+		width: 70%;
+	    margin: 0 auto 2em;
+	    display: block;
+	}
 }
 
 @media screen and (min-width: 520px) {
@@ -66,6 +72,20 @@
 	}
 }
 
+@media screen and (min-width: 590px) {
+	#restaurant-img {
+		width: 50%;
+	    float: left;
+	    box-sizing: border-box;
+	    padding: 0 1em 0 0;
+	}
+
+	#restaurant-cuisine {
+		min-width: 50%;
+    	float: left;
+	}
+}
+
 @media screen and (min-width: 600px) {
 	#restaurants-list li {
 	    flex: 0 1 250px;
@@ -97,6 +117,18 @@
 	    border: none;
 	    min-width: 280px;
     	max-width: 350px;
+    	padding: 0 1em 2em;
+	}
+
+	#restaurant-img {
+		width: 100%;
+	    float: none;
+	    padding: 0;
+	}
+
+	#restaurant-cuisine {
+		width: 100%;
+    	float: none;
 	}
 
 	#reviews-container {
@@ -142,6 +174,10 @@
 	    box-sizing: border-box;
 	    max-width: 270px;
 	    min-width: 200px;
+	}
+
+	#restaurant-name {
+		margin: 10px 0 30px;
 	}
 
 }
