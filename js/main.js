@@ -4,6 +4,59 @@ let restaurants,
 var newMap
 var markers = []
 
+///
+function Controller() {
+  this._registerServiceWorker();
+}
+
+Controller.prototype._registerServiceWorker = function() {
+  if (!navigator.serviceWorker) return;
+
+  var controller = this;
+
+  navigator.serviceWorker.register('/sw.js').then(function(reg) {
+    if (!navigator.serviceWorker.controller) {
+      return;
+    }
+
+    if (reg.waiting) {
+      console.log('reg waiting');
+      return;
+    }
+
+    if (reg.installing) {
+      console.log('reg installing');
+      controller._trackInstalling(reg.installing);
+      return;
+    }
+
+    reg.addEventListener('updatefound', function() {
+      console.log('reg update found');
+      controller._trackInstalling(reg.installing);
+    });
+  });
+
+  // Ensure refresh is only called once.
+  // This works around a bug in "force update on reload".
+  var refreshing;
+  navigator.serviceWorker.addEventListener('controllerchange', function() {
+    if (refreshing) return;
+    window.location.reload();
+    refreshing = true;
+  });
+};
+
+Controller.prototype._trackInstalling = function(worker) {
+  var controller = this;
+  worker.addEventListener('statechange', function() {
+    if (worker.state == 'installed') {
+      console.log('update ready');
+    }
+  });
+};
+
+new Controller();
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
