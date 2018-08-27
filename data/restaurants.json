@@ -84,7 +84,7 @@
     "name": "Kang Ho Dong Baekjeong",
     "neighborhood": "Manhattan",
     "photograph": "3.jpg",
-    "altText": "View of empty Kang Ho Dong Baekjeong restaurant with the custom table fitted with a grill in the forefront",
+    "altText": "View of empty restaurant with the custom table fitted with a grill in the forefront",
     "address": "1 E 32nd St, New York, NY 10016",
     "latlng": {
       "lat": 40.747143,
@@ -284,7 +284,7 @@
     "name": "The Dutch",
     "neighborhood": "Manhattan",
     "photograph": "8.jpg",
-    "altText": "Close shot of the The Dutch restaurant's blue and white sign on the corner of a building next to a white blooming tree",
+    "altText": "Close shot of the The Dutch restaurant's blue and white sign on the corner of a building",
     "address": "131 Sullivan St, New York, NY 10012",
     "latlng": {
       "lat": 40.726584,
@@ -324,7 +324,7 @@
     "name": "Mu Ramen",
     "neighborhood": "Queens",
     "photograph": "9.jpg",
-    "altText": "Table of a group of Asian looking young people, man eating with chopsticks, a woman checking her phone and a counter with the cashier in the background",
+    "altText": "Table of a group of young people, man eating with chopsticks, a woman checking her phone, a counter with the cashier in the background",
     "address": "1209 Jackson Ave, Queens, NY 11101",
     "latlng": {
       "lat": 40.743797,

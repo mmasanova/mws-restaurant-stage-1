@@ -17,16 +17,13 @@
 }
 
 @media screen and (min-width: 520px) {
-	nav {
+	.heading {
 		height: 4em;
 	}
 
-	nav h1 {
+	.heading a {
+		line-height: 3em;
 		width: auto;
-	}
-
-	nav h1 a {
-		line-height: 3.5em;
 	}
 
 	#restaurants-list {
@@ -43,6 +40,7 @@
 	    display: flex;
 	    flex-direction: column;
 	    box-sizing: border-box;
+	    padding: 0 0 1em;
 	}
 
 	#restaurants-list .restaurant-img {
@@ -54,17 +52,12 @@
 
 	#restaurants-list li a {
 		order: 1;
-		margin: 0.5em 0 1em 0.5em;
-	}
-
-	#restaurants-list li h1 {
-		order: 1;
-		margin: 0.5em;
+		margin: 10px;
 	}
 
 	#restaurants-list p {
 		order: 1;
-		margin: 0 0.5em;
+		margin: 0 10px;
 	}
 
 	.inside #maincontent {
@@ -72,7 +65,11 @@
 	}
 }
 
-@media screen and (min-width: 590px) {
+@media screen and (min-width: 600px) {
+	#restaurants-list li {
+	    flex: 0 1 250px;
+	}
+
 	#restaurant-img {
 		width: 50%;
 	    float: left;
@@ -83,12 +80,6 @@
 	#restaurant-cuisine {
 		min-width: 50%;
     	float: left;
-	}
-}
-
-@media screen and (min-width: 600px) {
-	#restaurants-list li {
-	    flex: 0 1 250px;
 	}
 }
 
@@ -103,7 +94,7 @@
 	    flex: 1;
 	    order: 1;
 	    min-height: 100%;
-	    height: 100vh;
+	    height: 720px;
 	}
 
 	#restaurant-info {

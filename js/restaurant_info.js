@@ -94,7 +94,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.alt = restaurant.altText;
 
   const cuisine = document.getElementById('restaurant-cuisine');
-  cuisine.innerHTML = restaurant.cuisine_type;
+  cuisine.innerHTML = restaurant.cuisine_type + ' CUISINE';
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -163,7 +163,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = review.name;
 
   const date = document.createElement('span');
@@ -191,6 +191,7 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
+  li.setAttribute('aria-current', 'page');
   breadcrumb.appendChild(li);
 }
 
