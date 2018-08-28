@@ -1,6 +1,4 @@
 /*
- After you have changed the settings at "Your code goes here",
- run this with one of these options:
   "grunt" alone creates a new, completed images directory
   "grunt clean" removes the images directory
   "grunt responsive_images" re-processes images without removing the old ones
@@ -25,12 +23,6 @@ module.exports = function(grunt) {
             suffix: '-small_2x',
             quality: 40
           },
-          // {
-          //   rename: false,
-          //   width: 480,
-          //   suffix: '-small_3x',
-          //   quality: 40
-          // },
           {
             rename: false,
             width: 270,
@@ -43,12 +35,6 @@ module.exports = function(grunt) {
             suffix: '-medium_2x',
             quality: 40
           },
-          // {
-          //   rename: false,
-          //   width: 810,
-          //   suffix: '-medium_3x',
-          //   quality: 40
-          // },
           {
             rename: false,
             width: 350,
@@ -60,18 +46,8 @@ module.exports = function(grunt) {
             quality: 40,
             suffix: '_2x'
           }]
-          // {
-          //   rename: false,
-          //   width: 1050,
-          //   quality: 30,
-          //   suffix: '_3x'
-          // }]
         },
 
-        /*
-        You don't need to change this part if you don't change
-        the directory structure.
-        */
         files: [{
           expand: true,
           src: ['*.{gif,jpg,png}'],
@@ -82,16 +58,6 @@ module.exports = function(grunt) {
     },
 
     imagemin: {
-        // static: {
-        //     options: {
-        //         optimizationLevel: 3
-        //     },
-        //     files: {
-        //         'dist/img.png': 'src/img.png',
-        //         'dist/img.jpg': 'src/img.jpg',
-        //         'dist/img.gif': 'src/img.gif'
-        //     }
-        // },
         dynamic: {
             options: {
               optimizationLevel: 5
@@ -131,6 +97,14 @@ module.exports = function(grunt) {
         }]
       },
     },
+
+    eslint: {
+        options: {
+            configFile: 'conf/eslint.json',
+            rulePaths: ['conf/rules']
+        },
+        target: ['file.js']
+    }
   });
   
   grunt.loadNpmTasks('grunt-responsive-images');
@@ -139,5 +113,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mkdir');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
-
+  grunt.registerTask('eslint', ['eslint']);
 };
