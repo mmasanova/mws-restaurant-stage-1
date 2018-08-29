@@ -72,6 +72,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	height: 4.7em;
 	background-color: #252831;
 	text-align:center;
+	margin: 0;
+    font-size: 1em;
 }
 
 .heading a {
